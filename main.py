@@ -2,6 +2,8 @@ import googlemaps
 from googlemaps import convert
 from datetime import datetime
 
+from googlemaps.geolocation import geolocate
+
 # CONSTANT DEFINITIONS
 locations = [{
                 "lat" : 43.472107,
@@ -50,4 +52,5 @@ seconds = duration % 60
 print(f'{minutes} minutes and {seconds} seconds')
 print(directions_result[0]['legs'][0]['end_address'])
 print(directions_result[0]['legs'][0]['start_address'])
-
+v = geolocate(gmaps)
+print(v, "sd")
