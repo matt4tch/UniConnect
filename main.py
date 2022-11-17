@@ -20,8 +20,21 @@ locations = [{
             }, {
                 "lat" : 43.472329,
                 "lng" : -80.542001
-            }]
-names = ['V1', 'MC', 'DP', 'HH', 'DC Library']
+            },
+                {
+                "lat" : 43.458290,
+                 "lng": -80.53950
+            },  {
+                "lat": 43.478710,
+                "lng": -80.562100
+            },
+                {
+                "lat": 43.452760,
+                "lng": -80.552790
+             }]
+names = ['V1', 'MC', 'DP', 'HH', 'DC Library', 'CMH', 'E7', 'MKV']
+
+
 
 # Retrieves a Google Maps Object
 gmaps = googlemaps.Client(key='AIzaSyDD4V7yHsGuEztB3sRbcQFfjAZYyZhBHm4')
