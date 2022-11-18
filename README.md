@@ -12,3 +12,7 @@ Backend: matching algorithm
 -	Option that allows users to input building location in case they have privacy concerns over location sharing 
 
 -	Give directions to user by using Google Maps API
+
+1) How to obtain client's device location with higher accuracy, user2 client's device
+2) 
+3) Front end frameworks to use?
