@@ -14,5 +14,9 @@ Backend: matching algorithm
 -	Give directions to user by using Google Maps API
 
 1) How to obtain client's device location with higher accuracy, user2 client's device
-2) 
-3) Front end frameworks to use?
+2) How to interact between two user's devices
+3) How to store data
+- user information (username, password)
+5) Codes represented by a 6 digit code (given to one user that seeks to add another)
+6) Front end frameworks to use?
+7) 
