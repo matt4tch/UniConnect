@@ -19,4 +19,6 @@ Backend: matching algorithm
 - user information (username, password)
 5) Codes represented by a 6 digit code (given to one user that seeks to add another)
 6) Front end frameworks to use?
-7) 
+
+
+
