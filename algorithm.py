@@ -43,9 +43,12 @@ gmaps = googlemaps.Client(key='AIzaSyDD4V7yHsGuEztB3sRbcQFfjAZYyZhBHm4')
 algorithm_values = []
 duration1s = []
 duration2s = []
-for loc in locations[2:]:
-    directions = gmaps.directions(loc, locations[0], mode="walking", departure_time=now)
-    directions2 = gmaps.directions(loc, locations[1], mode="walking", departure_time=now)
+user1_location = input("Enter Your Address")
+user2_location = input("Enter Your Friend's Address")
+
+for loc in locations:
+    directions = gmaps.directions(loc, user1_location, mode="walking", departure_time=now)
+    directions2 = gmaps.directions(loc, user2_location, mode="walking", departure_time=now)
     duration = directions[0]['legs'][0]['duration']['value']
     duration2 = directions2[0]['legs'][0]['duration']['value']
     abs_diff_weighting = 0.5
@@ -64,4 +67,6 @@ for loc in locations[2:]:
     seconds2 = minutes2 % 60
     print(duration)
     print(duration2)
-print(f'From {names[optimal_value_index]} to {names[0]} it takes User 1 {minutes1} minutes and {seconds1} seconds and User 2 {minutes2} minutes and {seconds2} seconds')
+print(f'The optimal common study location is: {names[optimal_value_index]}')
+print (f'It takes User 1 {minutes1} minutes and {seconds1} seconds and takes User 2 {minutes2} minutes and {seconds2} seconds')
+
