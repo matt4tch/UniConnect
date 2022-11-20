@@ -6,8 +6,8 @@ from googlemaps.geolocation import geolocate
 
 # CONSTANT DEFINITIONS
 locations = [{
-                "lat" : 43.472107,
-                "lng" : -80.543938
+                "lat" : 43.478710,
+                "lng" : -80.562100
              }, {
                 "lat" : 43.471593,
                 "lng" : -80.550003
@@ -25,8 +25,8 @@ locations = [{
                 "lat" : 43.458290,
                  "lng": -80.53950
             },  {
-                "lat": 43.478710,
-                "lng": -80.562100
+                "lat": 43.470630,
+                "lng": -80.541380
             },
                 {
                 "lat": 43.452760,
@@ -38,8 +38,18 @@ locations = [{
                 "lng":-80.539581
             }]
 
-names = ['Village 1 Waterloo', 'Mathematics and Computer', 'Dana Porter Library', 'Hagey Hall', 'Davis Centre Library',
+names = ['Village 1 Waterloo', 'Mathematics and Computer Waterloo', 'Dana Porter Library', 'Hagey Hall', 'Davis Centre Library',
          'Claudette Miller Hall', 'Engineering 7 Waterloo', 'Mackenzie King Village', 'Student Life Centre Waterloo' ]
+
+alternate_names = {'v1' : names[0],
+                   'mc' : names[1],
+                   'dp' : names[2],
+                   'hh' : names[3],
+                   'dc' : names[4],
+                   'cmh': names[5],
+                   'e7' : names[6],
+                   'mkv' : names[7],
+                   'slc' : names[8]}
 
 now = datetime.now()
 
@@ -52,10 +62,10 @@ def rate_preferences():
     possible_ratings = ['1','2','3','4','5','6','7','8','9','10']
     preference_ranks = []
     for name in names:
-        preference_rank = input(f'Please enter a personal preference ranking on a scale of 1-10 on {name}')
+        preference_rank = input(f'Please enter a personal preference rating on a scale from 1-10: {name}\n')
         while preference_rank not in possible_ratings:
             print("Please enter a valid integer between 1 and 10")
-            preference_rank = input(f'Please enter a personal preference ranking on a scale of 1-10 on {name}')
+            preference_rank = input(f'Please enter a personal preference rating on a scale from 1-10 on {name}\n')
         if preference_rank in possible_ratings:
             preference_ranks.append(int(preference_rank))
     return preference_ranks
@@ -64,16 +74,22 @@ def determine_optimal_location():
     user1_name = input("Enter Your Name")
     user2_name = input("Enter Your Friend's Name")
     user1_location = input("Enter Your Address")
-    while user1_location not in names:
-        print("Please enter the given names one of the following loations: 'Village 1', \n 'Mathematics and Computer', 'Dana Porter Library', 'Hagey Hall', 'Davis Centre Library', \n "
-               "'Claudette Miller Hall', 'Engineering 7', 'Mackenzie King Village', 'Student Life Centre', Ron Eydt Village")
-        user1_location = input("Enter Your Friend's Name")
+    while user1_location not in names and user1_location.lower() not in alternate_names.keys():
+        print("Please enter the given names (or acronyms) of one of the following loations: 'Village 1 Waterloo', \n 'Mathematics and Computer', 'Dana Porter Library', 'Hagey Hall', 'Davis Centre Library', \n "
+               "'Claudette Miller Hall', 'Engineering 7 Waterloo', 'Mackenzie King Village', 'Student Life Centre Waterloo'")
+        user1_location = input("Enter Your Address")
+
+    if user1_location.lower() in alternate_names.keys():
+        user1_location = alternate_names[user1_location.lower()]
 
     user2_location = input("Enter Your Friend's Address")
-    while user2_location not in names:
-        print("Please enter the given names one of the following loations: 'Village 1', \n 'Mathematics and Computer', 'Dana Porter Library', 'Hagey Hall', 'Davis Centre Library', \n "
-               "'Claudette Miller Hall', 'Engineering 7', 'Mackenzie King Village', 'Student Life Centre', Ron Eydt Village")
-        user2_location = input("Enter Your Friend's Name")
+    while user2_location not in names and user2_location.lower() not in alternate_names.keys():
+        print("Please enter the given names (or acronyms) one of the following loations: 'Village 1 Waterloo', \n 'Mathematics and Computer', 'Dana Porter Library', 'Hagey Hall', 'Davis Centre Library', \n "
+               "'Claudette Miller Hall', 'Engineering 7 Waterloo', 'Mackenzie King Village', 'Student Life Centre Waterloo'")
+        user2_location = input("Enter Your Friend's Address")
+
+    if user2_location.lower() in alternate_names.keys():
+        user2_location = alternate_names[user2_location.lower()]
 
     preference_ranks = rate_preferences()
 
@@ -94,7 +110,7 @@ def determine_optimal_location():
         abs_diff_weighting = 0.35
         sum_weighting = 0.35
         user_pref_weighting = 0.30
-        calc = ((abs(duration2 - duration)) * abs_diff_weighting) + ((duration + duration2) * sum_weighting) + (user_pref_weighting * (11 - preference_ranks[index]) * 50)
+        calc = ((abs(duration2 - duration)) * abs_diff_weighting) + ((duration + duration2) * sum_weighting) + (user_pref_weighting * preference_ranks[index] * 50)
 
         #Store the duration data for each prospective trip for both users and the algorithm result for each loc
         algorithm_values.append(calc)
