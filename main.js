@@ -30,10 +30,7 @@ function initMap() {
      .route({
        origin: origin,
        destination: destination,
-       waypoints: [
-         { location: "Cambridge, ON" },
-         { location: "Guelph, ON" },
-       ],
+       waypoints: [],
        travelMode: google.maps.TravelMode.WALKING,
        //avoidTolls: true,
      })
