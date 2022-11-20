@@ -6,8 +6,8 @@ from googlemaps.geolocation import geolocate
 
 # CONSTANT DEFINITIONS
 locations = [{
-                "lat" : 43.472107,
-                "lng" : -80.543938
+                "lat" : 43.478710,
+                "lng" : -80.562100
              }, {
                 "lat" : 43.471593,
                 "lng" : -80.550003
@@ -25,8 +25,8 @@ locations = [{
                 "lat" : 43.458290,
                  "lng": -80.53950
             },  {
-                "lat": 43.478710,
-                "lng": -80.562100
+                "lat": 43.470630,
+                "lng": -80.541380
             },
                 {
                 "lat": 43.452760,
@@ -65,14 +65,14 @@ def determine_optimal_location():
     user2_name = input("Enter Your Friend's Name")
     user1_location = input("Enter Your Address")
     while user1_location not in names:
-        print("Please enter the given names one of the following loations: 'Village 1', \n 'Mathematics and Computer', 'Dana Porter Library', 'Hagey Hall', 'Davis Centre Library', \n "
-               "'Claudette Miller Hall', 'Engineering 7', 'Mackenzie King Village', 'Student Life Centre', Ron Eydt Village")
+        print("Please enter the given names one of the following loations: 'Village 1 Waterloo', \n 'Mathematics and Computer', 'Dana Porter Library', 'Hagey Hall', 'Davis Centre Library', \n "
+               "'Claudette Miller Hall', 'Engineering 7 Waterloo', 'Mackenzie King Village', 'Student Life Centre', Ron Eydt Village")
         user1_location = input("Enter Your Friend's Name")
 
     user2_location = input("Enter Your Friend's Address")
     while user2_location not in names:
-        print("Please enter the given names one of the following loations: 'Village 1', \n 'Mathematics and Computer', 'Dana Porter Library', 'Hagey Hall', 'Davis Centre Library', \n "
-               "'Claudette Miller Hall', 'Engineering 7', 'Mackenzie King Village', 'Student Life Centre', Ron Eydt Village")
+        print("Please enter the given names one of the following loations: 'Village 1 Waterloo', \n 'Mathematics and Computer', 'Dana Porter Library', 'Hagey Hall', 'Davis Centre Library', \n "
+               "'Claudette Miller Hall', 'Engineering 7 Waterloo', 'Mackenzie King Village', 'Student Life Centre', Ron Eydt Village")
         user2_location = input("Enter Your Friend's Name")
 
     preference_ranks = rate_preferences()
