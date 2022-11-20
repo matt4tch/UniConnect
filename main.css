@@ -60,9 +60,11 @@ body {
     }
 }
 #map {
-    height: 100%;
+    height: 400px;
+    /* The height is 400 pixels */
+    width: 800px;
   }
-  #floating-panel {
+#floating-panel {
     position: absolute;
     top: 10px;
     left: 25%;
@@ -74,7 +76,7 @@ body {
     font-family: "Roboto", "sans-serif";
     line-height: 30px;
     padding-left: 10px;
-  }
+}
   
   #warnings-panel {
     width: 100%;
