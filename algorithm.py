@@ -67,7 +67,7 @@ def determine_optimal_location():
     while user1_location not in names:
         print("Please enter the given names one of the following loations: 'Village 1 Waterloo', \n 'Mathematics and Computer', 'Dana Porter Library', 'Hagey Hall', 'Davis Centre Library', \n "
                "'Claudette Miller Hall', 'Engineering 7 Waterloo', 'Mackenzie King Village', 'Student Life Centre', Ron Eydt Village")
-        user1_location = input("Enter Your Friend's Name")
+        user1_location = input("Enter Your Address")
 
     user2_location = input("Enter Your Friend's Address")
     while user2_location not in names:
