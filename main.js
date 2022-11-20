@@ -1,7 +1,7 @@
 function initMap() {
    const map = new google.maps.Map(document.getElementById("map"), {
      zoom: 4,
-     center: { lat: 43.4643, lng: 80.5204 }, 
+     center: { lat: 43.4643, lng: 80.5204 }//Waterloo, ON, 
    });
    const directionsService = new google.maps.DirectionsService();
    const directionsRenderer = new google.maps.DirectionsRenderer({

@@ -62,7 +62,7 @@ body {
 #map {
     height: 400px;
     /* The height is 400 pixels */
-    width: 800px;
+    width: 100%;
   }
 #floating-panel {
     position: absolute;
