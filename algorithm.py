@@ -39,7 +39,7 @@ locations = [{
             }]
 
 names = ['Village 1 Waterloo', 'Mathematics and Computer', 'Dana Porter Library', 'Hagey Hall', 'Davis Centre Library',
-         'Claudette Miller Hall', 'Engineering 7 Waterloo', 'Mackenzie King Village', 'Student Life Centre Waterloo' ]
+         'Claudette Miller Hall', 'Engineering 7 Waterloo', 'Mackenzie King Village', 'Student Life Centre Waterloo']
 
 now = datetime.now()
 
@@ -66,13 +66,13 @@ def determine_optimal_location():
     user1_location = input("Enter Your Address")
     while user1_location not in names:
         print("Please enter the given names one of the following loations: 'Village 1 Waterloo', \n 'Mathematics and Computer', 'Dana Porter Library', 'Hagey Hall', 'Davis Centre Library', \n "
-               "'Claudette Miller Hall', 'Engineering 7 Waterloo', 'Mackenzie King Village', 'Student Life Centre', Ron Eydt Village")
+               "'Claudette Miller Hall', 'Engineering 7 Waterloo', 'Mackenzie King Village', 'Student Life Centre Waterloo'")
         user1_location = input("Enter Your Address")
 
     user2_location = input("Enter Your Friend's Address")
     while user2_location not in names:
         print("Please enter the given names one of the following loations: 'Village 1 Waterloo', \n 'Mathematics and Computer', 'Dana Porter Library', 'Hagey Hall', 'Davis Centre Library', \n "
-               "'Claudette Miller Hall', 'Engineering 7 Waterloo', 'Mackenzie King Village', 'Student Life Centre', Ron Eydt Village")
+               "'Claudette Miller Hall', 'Engineering 7 Waterloo', 'Mackenzie King Village', 'Student Life Centre Waterloo'")
         user2_location = input("Enter Your Friend's Address")
 
     preference_ranks = rate_preferences()
