@@ -126,9 +126,9 @@ def determine_optimal_location():
         optimal_duration1 = duration1s[optimal_value_index]
         optimal_duration2 = duration2s[optimal_value_index]
         minutes1 = optimal_duration1 // 60
-        seconds1 = minutes1 % 60
+        seconds1 = optimal_duration1 % 60
         minutes2 = optimal_duration2 // 60
-        seconds2 = minutes2 % 60
+        seconds2 = optimal_duration2 % 60
 
     print(f'The optimal common study location is: {names[optimal_value_index]}')
     print (f'It will take {user1_name} {minutes1} minutes and {seconds1} seconds to get to {names[optimal_value_index]}')
