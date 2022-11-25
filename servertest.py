@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def algorithm_page():
-    return algorithm.determine_optimal_location()
+    return onefunctionalgorithm.determine_optimal_location()
 
 @app.route('/', methods=['GET'])
 def home_page():
