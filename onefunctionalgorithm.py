@@ -133,13 +133,6 @@ def determine_optimal_location():
         minutes2 = optimal_duration2 // 60
         seconds2 = optimal_duration2 % 60
 
-    print(
-        f'The optimal common study location is: {names[optimal_value_index]}')
-    print(
-        f'It will take {user1_name} {minutes1} minutes and {seconds1} seconds to get to {names[optimal_value_index]}')
-    print(
-        f'It will take {user2_name} {minutes2} minutes and {seconds2} seconds to get to {names[optimal_value_index]}')
-
-
-# Main
-determine_optimal_location()
+    return f'The optimal common study location is: {names[optimal_value_index]} \
+    It will take {user1_name} {minutes1} minutes and {seconds1} seconds to get to \
+    {names[optimal_value_index]} It will take {user2_name} {minutes2} minutes and {seconds2} seconds to get to {names[optimal_value_index]}'
