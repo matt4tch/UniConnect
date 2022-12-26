@@ -2,6 +2,7 @@ from flask import *
 import json
 import time
 import algorithm
+import onefunctionalgorithm
 
 app = Flask(__name__)
 
