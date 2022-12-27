@@ -45,9 +45,14 @@
         <div id="panel"></div>
       </div>
     </section>
+    <div class="Server_Info">
+      <button class="Determine_Results"> Determine Results</button>
+      <p class="print_server"> User_info: </p>
+    </div>
     <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDD4V7yHsGuEztB3sRbcQFfjAZYyZhBHm4&callback=initMap&v=weekly"
     defer
   ></script>
+  <script src="{{ url_for('static', filename = 'server.js')}}"></script>
   </body>
 </html>

@@ -1,6 +1,6 @@
 import googlemaps
 from googlemaps import convert
-from datetime import datetime
+from datetime import datetime, time
 
 from googlemaps.geolocation import geolocate
 
@@ -22,23 +22,24 @@ locations = [{
     "lng": -80.542001
 },
     {
-    "lat": 43.458290,
-    "lng": -80.53950
-},  {
-    "lat": 43.470630,
-    "lng": -80.541380
-},
+        "lat": 43.458290,
+        "lng": -80.53950
+    }, {
+        "lat": 43.470630,
+        "lng": -80.541380
+    },
     {
-    "lat": 43.452760,
-    "lng": -80.552790
-},
+        "lat": 43.452760,
+        "lng": -80.552790
+    },
 
     {
-    "lat": 43.458290,
-    "lng": -80.539581
-}]
+        "lat": 43.458290,
+        "lng": -80.539581
+    }]
 
-names = ['Village 1 Waterloo', 'Mathematics and Computer Waterloo', 'Dana Porter Library', 'Hagey Hall', 'Davis Centre Library',
+names = ['Village 1 Waterloo', 'Mathematics and Computer Waterloo', 'Dana Porter Library', 'Hagey Hall',
+         'Davis Centre Library',
          'Claudette Miller Hall', 'Engineering 7 Waterloo', 'Mackenzie King Village', 'Student Life Centre Waterloo']
 
 alternate_names = {'v1': names[0],
@@ -58,12 +59,20 @@ gmaps = googlemaps.Client(key='AIzaSyDD4V7yHsGuEztB3sRbcQFfjAZYyZhBHm4')
 
 
 def determine_optimal_location():
+    # Variables to return
+    optimal_value_index = 0
+    minutes1 = 0
+    seconds1 = 0
+    minutes2 = 0
+    seconds2 = 0
+
     user1_name = input("Enter Your Name")
     user2_name = input("Enter Your Friend's Name")
     user1_location = input("Enter Your Address")
     while user1_location not in names and user1_location.lower() not in alternate_names.keys():
-        print("Please enter the given names (or acronyms) of one of the following loations: 'Village 1 Waterloo', \n 'Mathematics and Computer', 'Dana Porter Library', 'Hagey Hall', 'Davis Centre Library', \n "
-              "'Claudette Miller Hall', 'Engineering 7 Waterloo', 'Mackenzie King Village', 'Student Life Centre Waterloo'")
+        print(
+            "Please enter the given names (or acronyms) of one of the following loations: 'Village 1 Waterloo', \n 'Mathematics and Computer', 'Dana Porter Library', 'Hagey Hall', 'Davis Centre Library', \n "
+            "'Claudette Miller Hall', 'Engineering 7 Waterloo', 'Mackenzie King Village', 'Student Life Centre Waterloo'")
         user1_location = input("Enter Your Address")
 
     if user1_location.lower() in alternate_names.keys():
@@ -71,14 +80,15 @@ def determine_optimal_location():
 
     user2_location = input("Enter Your Friend's Address")
     while user2_location not in names and user2_location.lower() not in alternate_names.keys():
-        print("Please enter the given names (or acronyms) one of the following loations: 'Village 1 Waterloo', \n 'Mathematics and Computer', 'Dana Porter Library', 'Hagey Hall', 'Davis Centre Library', \n "
-              "'Claudette Miller Hall', 'Engineering 7 Waterloo', 'Mackenzie King Village', 'Student Life Centre Waterloo'")
+        print(
+            "Please enter the given names (or acronyms) one of the following loations: 'Village 1 Waterloo', \n 'Mathematics and Computer', 'Dana Porter Library', 'Hagey Hall', 'Davis Centre Library', \n "
+            "'Claudette Miller Hall', 'Engineering 7 Waterloo', 'Mackenzie King Village', 'Student Life Centre Waterloo'")
         user2_location = input("Enter Your Friend's Address")
 
     if user2_location.lower() in alternate_names.keys():
         user2_location = alternate_names[user2_location.lower()]
 
-# Preferences
+    # Preferences
     possible_ratings = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
     preference_ranks = []
     for name in names:
@@ -91,7 +101,7 @@ def determine_optimal_location():
         if preference_rank in possible_ratings:
             preference_ranks.append(int(preference_rank))
 
-###
+    ###
 
     algorithm_values = []
     duration1s = []
@@ -113,7 +123,8 @@ def determine_optimal_location():
         sum_weighting = 0.35
         user_pref_weighting = 0.30
         calc = ((abs(duration2 - duration)) * abs_diff_weighting) + ((duration + duration2)
-                                                                     * sum_weighting) + (user_pref_weighting * preference_ranks[index] * 50)
+                                                                     * sum_weighting) + (
+                       user_pref_weighting * preference_ranks[index] * 50)
 
         # Store the duration data for each prospective trip for both users and the algorithm result for each loc
         algorithm_values.append(calc)
@@ -133,6 +144,5 @@ def determine_optimal_location():
         minutes2 = optimal_duration2 // 60
         seconds2 = optimal_duration2 % 60
 
-    return f'The optimal common study location is: {names[optimal_value_index]} \
-    It will take {user1_name} {minutes1} minutes and {seconds1} seconds to get to \
-    {names[optimal_value_index]} It will take {user2_name} {minutes2} minutes and {seconds2} seconds to get to {names[optimal_value_index]}'
+    return {'Study_Location': f'{names[optimal_value_index]}', 'User_1': user1_name,
+            'User_1_Time': f'{minutes1}:{seconds1}', 'User_2_Time': f'{minutes2}:{seconds2}', 'User_2': user2_name}
