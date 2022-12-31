@@ -1,9 +1,12 @@
-import React from "react";
+import { useState } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import SearchMap from "./SearchMap";
-import MarkerLocation from "./MarkerLocation";
+import LatLongContext from "./latLong";
+import jsonQueryContext from "./jsonQuery";
+import YourLocation from "./YourLocation";
+import FriendLocation from "./FriendLocation";
+import Results from "./Results";
 
 const queryClient = new QueryClient({
     defaultOptions: {
@@ -15,28 +18,24 @@ const queryClient = new QueryClient({
   });
 
 const App = () => {
+    const latLong = useState(null);
+    const jsonQuery = useState(null);
     return (
         <div>
             <BrowserRouter>
-                <QueryClientProvider client={queryClient}>
-                    <header>
-                        <h1>UniConnect</h1>
-                    </header>
-                    <div>
-                        <h3>Where are you?</h3>
-                        <div id="location-search">
-                            <MarkerLocation />
-                        </div>
-                        <div id="map">
-                            <div id="panel">
-                                <SearchMap />
-                            </div>
-                        </div>
-                        <button>
-                            Submit
-                        </button>
-                    </div>
-                </QueryClientProvider>
+                <LatLongContext.Provider value={latLong}>
+                    <jsonQueryContext.Provider value={jsonQuery}>
+                        <QueryClientProvider client={queryClient}>
+                                <div>
+                                    <Routes>
+                                        <Route path="/your-location" element={<YourLocation />} />
+                                        <Route path="/friend-location" element={<FriendLocation />} />
+                                        <Route path="/Results" element={<Results />} />
+                                    </Routes>
+                                </div>
+                        </QueryClientProvider>
+                    </jsonQueryContext.Provider>
+                </LatLongContext.Provider>
             </BrowserRouter>
         </div>
     )

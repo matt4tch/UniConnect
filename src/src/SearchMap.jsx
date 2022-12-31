@@ -1,5 +1,6 @@
-import { useMemo } from 'react';
+import { useContext, useMemo } from 'react';
 import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
+import LatLongContext from './latLong';
 
 const SearchMap = () => {
     const { isLoaded } = useLoadScript({
@@ -18,6 +19,8 @@ const Map = () => {
         lat: 43.4723, lng: -80.5449 //University of Waterloo
     }), []);
 
+    const [latLong] = useContext(LatLongContext);
+
     return (
         <GoogleMap
             center={center}
@@ -29,7 +32,11 @@ const Map = () => {
                 width: "100%"
               }} //Setting the size of the Map
             > 
-            <Marker position={center}/>
+            {
+                LatLongContext ? (
+                    <Marker position={latLong}/>
+                ) : <Marker position={center}/>
+            }
         </GoogleMap>);
 }
 

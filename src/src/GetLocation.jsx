@@ -1,15 +1,15 @@
-import { useState /*, useEffect, useRef*/ } from 'react'
+import { useContext, useState} from 'react'
 import { useQuery } from "@tanstack/react-query";
-import {  } from '@ubilabs/google-maps-react-hooks'
-//import { Marker } from '@react-google-maps/api';
 import fetchGeoLocation from "./fetchGeoLocation";
+import LatLongContext from './latLong';
 
-const MarkerLocation = () => {
-    //const [location, setLocation] = useState("200 University Ave W, Waterloo");
+const GetLocation = () => {
     const [requestParams, setRequestParams] = useState({
         location: ""
     });
 
+    // eslint-disable-next-line no-unused-vars
+    const [_, setLatLong] = useContext(LatLongContext);
     const results = useQuery(["search", requestParams], fetchGeoLocation);
     const locationDetails = results?.data ?? [];
 
@@ -21,10 +21,16 @@ const MarkerLocation = () => {
                     const formData = new FormData(e.target);
                     const location = formData.get("location");
                     setRequestParams(location);
-                    const lat = locationDetails['results'][0]['geometry']['location']['lat'];
-                    const lon = locationDetails['results'][0]['geometry']['location']['lng'];
 
-                    console.log(lat + " " + lon);
+                    if (locationDetails.status === "ZERO_RESULTS") {
+                        alert('Location not found, please try again!');
+                    } else {
+                        let coordinates = {
+                            lat: locationDetails['results'][0]['geometry']['location']['lat'],
+                            lng: locationDetails['results'][0]['geometry']['location']['lng']
+                        }
+                        setLatLong(coordinates);
+                    }
                 }}>
                 <input id="location" name="location" placeholder="Location" />
                 <button>Submit</button>
@@ -33,4 +39,4 @@ const MarkerLocation = () => {
     )
 }
 
-export default MarkerLocation;
+export default GetLocation;
