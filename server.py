@@ -8,8 +8,6 @@ app = Flask(__name__)
 
 @app.route('/index/')
 def index():
-    #data_set = {'Message': f'{message}', 'Timestamp': time.time()}
-    #json_dump = json.dumps(data_set)
     return render_template('index.html')
 
 
