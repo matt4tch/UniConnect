@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import LatLongContext from "./latLong";
 import jsonQueryContext from "./jsonQuery";
+import StudySpotContext from "./IdealStudySpot";
 import YourLocation from "./YourLocation";
 import FriendLocation from "./FriendLocation";
 import Results from "./Results";
@@ -20,20 +21,21 @@ const queryClient = new QueryClient({
 const App = () => {
     const latLong = useState(null);
     const jsonQuery = useState(null);
+    const studySpot = useState(null);
     return (
         <div>
             <BrowserRouter>
                 <LatLongContext.Provider value={latLong}>
                     <jsonQueryContext.Provider value={jsonQuery}>
-                        <QueryClientProvider client={queryClient}>
-                                <div>
+                        <StudySpotContext.Provider value={studySpot}>
+                            <QueryClientProvider client={queryClient}>
                                     <Routes>
                                         <Route path="/your-location" element={<YourLocation />} />
                                         <Route path="/friend-location" element={<FriendLocation />} />
                                         <Route path="/Results" element={<Results />} />
                                     </Routes>
-                                </div>
-                        </QueryClientProvider>
+                            </QueryClientProvider>
+                        </StudySpotContext.Provider>
                     </jsonQueryContext.Provider>
                 </LatLongContext.Provider>
             </BrowserRouter>

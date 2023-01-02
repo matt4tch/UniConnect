@@ -27,8 +27,7 @@ const YourLocation = () =>{
                         <SearchMap />
                     </div>
                 </div>
-                <button
-                
+                <button className="your-submit"
                     onClick={() => {
                         {
                             LatLong ? (

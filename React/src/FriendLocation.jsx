@@ -11,7 +11,6 @@ const FriendLocation = () => {
     const [LatLong] = useContext(LatLongContext);
     const [JsonQuery, setJsonQuery] = useContext(jsonQueryContext);
     let jsonObject = {};
-    console.log(JsonQuery);
 
     return (
         <div className="friend-location">
@@ -28,10 +27,9 @@ const FriendLocation = () => {
                         <SearchMap />
                     </div>
                 </div>
-                <button
-                    onClick={() => {
-                        //navigate("/friend-location");
-                        console.log(LatLong);
+                <button className="final-submit"
+                    onClick={(e) => {
+                        e.preventDefault();
                         {
                             LatLong ? (
                                 jsonObject = {
@@ -41,7 +39,7 @@ const FriendLocation = () => {
                                     friendLng: LatLong['lng']
                                 },
                                 setJsonQuery(jsonObject),
-                                navigate("/preferences")
+                                navigate("/Results")
                             ) : alert("Please Enter a location")
                         }
                     }}>
@@ -50,6 +48,6 @@ const FriendLocation = () => {
             </div>
         </div>
     )
-} 
+}
 
 export default FriendLocation;
