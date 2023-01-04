@@ -50,8 +50,9 @@ def request_page1():
     friend_lat = request_data['friendLat']
     friend_lng = request_data['friendLng']
 
-    data_set = ({'status': 200, 'ok': True, 'your_lat': f'{your_lat}', 'your_lng': f'{your_lng}', 'friend_lat': f'{friend_lat}',
-                'friend_lng': f'{friend_lng}'})
+    data_set = ({'status': 200, 'ok': True, 'Results': [{'your_lat': f'{your_lat}'}, {'your_lng': f'{your_lng}'},
+                                                        {'friend_lat': f'{friend_lat}'},
+                                                        {'friend_lng': f'{friend_lng}'}]})
     json_dump = json.dumps(data_set)
 
     return json_dump

@@ -4,6 +4,7 @@ import GetLocation from "./GetLocation";
 import SearchMap from "./SearchMap";
 import LatLongContext from "./latLong";
 import jsonQueryContext from "./jsonQuery";
+import StudySpotResult from "./StudySpotResult";
 
 const FriendLocation = () => {
 
@@ -39,6 +40,7 @@ const FriendLocation = () => {
                                     friendLng: LatLong['lng']
                                 },
                                 setJsonQuery(jsonObject),
+                                <StudySpotResult requestParams={JsonQuery}/>,
                                 navigate("/Results")
                             ) : alert("Please Enter a location")
                         }

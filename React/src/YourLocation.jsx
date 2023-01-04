@@ -28,7 +28,8 @@ const YourLocation = () =>{
                     </div>
                 </div>
                 <button className="your-submit"
-                    onClick={() => {
+                    onClick={(e) => {
+                        e.preventDefault();
                         {
                             LatLong ? (
                                 yourLocation = {
