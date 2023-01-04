@@ -11,6 +11,12 @@ const GetLocation = () => {
     const results = useQuery(["search", requestParams], fetchGeoLocation);
     const locationDetails = results?.data ?? [];
 
+    const [submitState, setSubmitState] = useState(false);
+    const details = {
+        Coordinates: locationDetails,
+        submitState: submitState
+    }
+
     if (results.isLoading) {
         return (
           <div className="loading-pane">
@@ -26,12 +32,13 @@ const GetLocation = () => {
                     e.preventDefault();
                     const formData = new FormData(e.target);
                     const location = formData.get("location");
+                    setSubmitState(true);
                     setRequestParams(location);
                 }}>
                 <input id="location" name="location" placeholder="Location" />
                 <button>Submit</button>
             </form>
-            <LocationResults Coordinates={locationDetails}/>
+            <LocationResults GetLocationInfo={details}/>
         </div>
     )
 }

@@ -16,6 +16,7 @@ const Results = () => {
         SpotDetails.then(function(parsedData){
             setStudySpotResult(parsedData);
         }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     if (StudySpotResults == null) {
