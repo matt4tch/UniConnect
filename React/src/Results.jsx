@@ -1,7 +1,7 @@
 import { useContext, useEffect} from "react";
-import jsonQueryContext from "./jsonQuery";
-import sendData from "./sendData";
-import StudySpotContext from "./IdealStudySpot.js";
+import jsonQueryContext from "./Context/jsonQuery";
+import sendData from "./ApiRequests/sendData";
+import StudySpotContext from "./Context/IdealStudySpot.js";
 
 const Results = () => {
     const [JsonQuery] = useContext(jsonQueryContext);

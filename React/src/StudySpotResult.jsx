@@ -1,6 +1,6 @@
 import { useContext /*,useEffect*/ } from "react";
-import StudySpotContext from "./IdealStudySpot";
-import sendData from "./sendData";
+import StudySpotContext from "./Context/IdealStudySpot";
+import sendData from "./ApiRequests/sendData";
 
 const StudySpotResult = ({ requestParams }) =>{
     // eslint-disable-next-line no-unused-vars

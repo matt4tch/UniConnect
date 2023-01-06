@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import LocationPreferenceContext from "./locationPreference";
-import jsonQueryContext from "./jsonQuery";
+import LocationPreferenceContext from "./Context/locationPreference";
+import jsonQueryContext from "./Context/jsonQuery";
 
 const LocationList = (props) => {
     const navigate = useNavigate();

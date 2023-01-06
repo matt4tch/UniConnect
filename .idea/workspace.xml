@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a929d9d4-f651-4d63-b198-8c184e594eb9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/location_config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/React/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/React/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/React/src/FriendLocation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/React/src/FriendLocation.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/React/src/Results.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/React/src/Results.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/React/src/YourLocation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/React/src/YourLocation.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/React/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/React/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/React/src/sendData.js" beforeDir="false" afterPath="$PROJECT_DIR$/React/src/sendData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/onefunctionalgorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/onefunctionalgorithm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
-    </list>
+    <list default="true" id="a929d9d4-f651-4d63-b198-8c184e594eb9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

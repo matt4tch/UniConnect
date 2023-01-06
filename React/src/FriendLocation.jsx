@@ -2,8 +2,8 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import GetLocation from "./GetLocation";
 import SearchMap from "./SearchMap";
-import LatLongContext from "./latLong";
-import jsonQueryContext from "./jsonQuery";
+import LatLongContext from "./Context/latLong";
+import jsonQueryContext from "./Context/jsonQuery";
 import NotFound from "./NotFound";
 
 const FriendLocation = () => {

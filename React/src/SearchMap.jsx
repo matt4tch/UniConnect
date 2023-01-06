@@ -1,6 +1,6 @@
 import { useContext, useMemo } from 'react';
 import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
-import LatLongContext from './latLong';
+import LatLongContext from './Context/latLong';
 
 const SearchMap = () => {
     const { isLoaded } = useLoadScript({
