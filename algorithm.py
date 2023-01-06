@@ -1,6 +1,7 @@
 import googlemaps
 from googlemaps import convert
 from datetime import datetime
+import py_config
 
 from googlemaps.geolocation import geolocate
 
@@ -53,8 +54,10 @@ alternate_names = {'v1' : names[0],
 
 now = datetime.now()
 
+GOOGLE_API_KEY = py_config.GOOGLE_API_KEY
+
 # Retrieves a Google Maps Object
-gmaps = googlemaps.Client(key='AIzaSyDD4V7yHsGuEztB3sRbcQFfjAZYyZhBHm4')
+gmaps = googlemaps.Client(key=GOOGLE_API_KEY)
 
 
 

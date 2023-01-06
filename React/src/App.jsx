@@ -4,10 +4,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import LatLongContext from "./latLong";
 import jsonQueryContext from "./jsonQuery";
-import StudySpotContext from "./IdealStudySpot";
+import StudySpotContext from "./IdealStudySpot.js";
 import YourLocation from "./YourLocation";
 import FriendLocation from "./FriendLocation";
+import LocationPreferenceContext from "./locationPreference";
 import Results from "./Results";
+import Topbar from "./Topbar";
+import Locations from "./Locations";
+import HomePage from "./HomePage";
+import NotFound from "./NotFound";
 
 const queryClient = new QueryClient({
     defaultOptions: {
@@ -22,21 +27,28 @@ const App = () => {
     const latLong = useState(null);
     const jsonQuery = useState(null);
     const studySpot = useState(null);
+    const locationPreference = useState(null);
     return (
-        <div>
+        <div className="App">
             <BrowserRouter>
+            <Topbar />
                 <LatLongContext.Provider value={latLong}>
-                    <jsonQueryContext.Provider value={jsonQuery}>
-                        <StudySpotContext.Provider value={studySpot}>
-                            <QueryClientProvider client={queryClient}>
-                                    <Routes>
-                                        <Route path="/your-location" element={<YourLocation />} />
-                                        <Route path="/friend-location" element={<FriendLocation />} />
-                                        <Route path="/Results" element={<Results />} />
-                                    </Routes>
-                            </QueryClientProvider>
-                        </StudySpotContext.Provider>
-                    </jsonQueryContext.Provider>
+                <jsonQueryContext.Provider value={jsonQuery}>
+                <StudySpotContext.Provider value={studySpot}>
+                <LocationPreferenceContext.Provider value={locationPreference}>
+                    <QueryClientProvider client={queryClient}>
+                            <Routes>
+                                <Route path="/" element={<HomePage/>}/>
+                                <Route path="/your-location" element={<YourLocation />} />
+                                <Route path="/friend-location" element={<FriendLocation />} />
+                                <Route path="/location-preferences" element={<Locations />}/>
+                                <Route path="/Results" element={<Results />} />
+                                <Route path="*" element={<NotFound />} />
+                            </Routes>
+                    </QueryClientProvider>
+                </LocationPreferenceContext.Provider>
+                </StudySpotContext.Provider>
+                </jsonQueryContext.Provider>
                 </LatLongContext.Provider>
             </BrowserRouter>
         </div>

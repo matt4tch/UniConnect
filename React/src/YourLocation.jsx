@@ -14,9 +14,6 @@ const YourLocation = () =>{
 
     return (
         <div className="your-location">
-            <header>
-                <h1>UniConnect</h1>
-            </header>
             <div>
                 <h3>Where are you?</h3>
                 <div id="location-search">

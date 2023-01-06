@@ -4,7 +4,7 @@ import GetLocation from "./GetLocation";
 import SearchMap from "./SearchMap";
 import LatLongContext from "./latLong";
 import jsonQueryContext from "./jsonQuery";
-import StudySpotResult from "./StudySpotResult";
+import NotFound from "./NotFound";
 
 const FriendLocation = () => {
 
@@ -13,11 +13,16 @@ const FriendLocation = () => {
     const [JsonQuery, setJsonQuery] = useContext(jsonQueryContext);
     let jsonObject = {};
 
+    if(JsonQuery==null){
+        return (
+        <div className="Error">
+            <NotFound />
+        </div>
+        );
+    }
+
     return (
         <div className="friend-location">
-            <header>
-                <h1>UniConnect</h1>
-            </header>
             <div>
                 <h3>Where is your friend?</h3>
                 <div id="location-search">
@@ -28,7 +33,7 @@ const FriendLocation = () => {
                         <SearchMap />
                     </div>
                 </div>
-                <button className="final-submit"
+                <button className="submit"
                     onClick={(e) => {
                         e.preventDefault();
                         {
@@ -40,8 +45,7 @@ const FriendLocation = () => {
                                     friendLng: LatLong['lng']
                                 },
                                 setJsonQuery(jsonObject),
-                                <StudySpotResult requestParams={JsonQuery}/>,
-                                navigate("/Results")
+                                navigate("/location-preferences")
                             ) : alert("Please Enter a location")
                         }
                     }}>
