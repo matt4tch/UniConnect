@@ -1,9 +1,9 @@
 import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import GetLocation from "./GetLocation";
-import SearchMap from "./SearchMap";
-import LatLongContext from "./Context/latLong";
-import jsonQueryContext from "./Context/jsonQuery";
+import GetLocation from "../Components/GetLocation";
+import SearchMap from "../Components/SearchMap";
+import LatLongContext from "../Context/latLong";
+import jsonQueryContext from "../Context/jsonQuery";
 
 const YourLocation = () =>{
     const navigate = useNavigate();

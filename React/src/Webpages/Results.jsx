@@ -1,10 +1,10 @@
 import { useState, useContext, useEffect, useMemo} from "react";
 import { DirectionsRenderer, GoogleMap} from "@react-google-maps/api";
-import jsonQueryContext from "./Context/jsonQuery";
-import sendData from "./ApiRequests/sendData";
-import StudySpotContext from "./Context/IdealStudySpot.js";
-import calculateRoute from "./ApiRequests/fetchRoute";
-import ErrorBoundary from "./ErrorBoundary";
+import jsonQueryContext from "../Context/jsonQuery";
+import sendData from "../ApiRequests/sendData";
+import StudySpotContext from "../Context/IdealStudySpot.js";
+import calculateRoute from "../ApiRequests/fetchRoute";
+import ErrorBoundary from "../Components/ErrorBoundary";
 
 const Results = () => {
     const [JsonQuery] = useContext(jsonQueryContext);

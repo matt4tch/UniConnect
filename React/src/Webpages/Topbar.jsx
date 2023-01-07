@@ -4,7 +4,6 @@ const Topbar = () => {
         <nav className="topbar">
              <div className="left-section">
                 <Link to="/">Home</Link>
-                <Link to="/add">Preferences</Link>
              </div>
            
             <header className="middle-section">

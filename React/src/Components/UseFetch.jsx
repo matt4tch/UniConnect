@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import fetchLocationDetails from './ApiRequests/fetchLocationDetails';
-import LocationPreferenceContext from './Context/locationPreference';
+import fetchLocationDetails from '../ApiRequests/fetchLocationDetails';
+import LocationPreferenceContext from '../Context/locationPreference';
 import { useContext } from 'react';
 
 const useFetch = () => {

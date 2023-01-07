@@ -5,14 +5,14 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import LatLongContext from "./Context/latLong";
 import jsonQueryContext from "./Context/jsonQuery";
 import StudySpotContext from "./Context/IdealStudySpot.js";
-import YourLocation from "./YourLocation";
-import FriendLocation from "./FriendLocation";
+import YourLocation from "./Webpages/YourLocation";
+import FriendLocation from "./Webpages/FriendLocation";
 import LocationPreferenceContext from "./Context/locationPreference";
-import Results from "./Results";
-import Topbar from "./Topbar";
-import Locations from "./Locations";
-import HomePage from "./HomePage";
-import NotFound from "./NotFound";
+import Results from "./Webpages/Results";
+import Topbar from "./Webpages/Topbar";
+import Locations from "./Webpages/Locations";
+import HomePage from "./Webpages/HomePage";
+import NotFound from "./Webpages/NotFound";
 
 const queryClient = new QueryClient({
     defaultOptions: {

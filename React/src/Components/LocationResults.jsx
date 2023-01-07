@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import LatLongContext from "./Context/latLong";
+import LatLongContext from "../Context/latLong";
 
 const LocationResults = ({ GetLocationInfo }) => {
     // eslint-disable-next-line no-unused-vars

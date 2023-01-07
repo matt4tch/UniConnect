@@ -1,6 +1,6 @@
 import { useState} from 'react'
 import { useQuery } from "@tanstack/react-query";
-import fetchGeoLocation from "./ApiRequests/fetchGeoLocation";
+import fetchGeoLocation from "../ApiRequests/fetchGeoLocation";
 import LocationResults from './LocationResults';
 
 const GetLocation = () => {

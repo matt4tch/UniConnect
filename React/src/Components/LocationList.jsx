@@ -1,9 +1,9 @@
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import LocationPreferenceContext from "./Context/locationPreference";
-import jsonQueryContext from "./Context/jsonQuery";
+import LocationPreferenceContext from "../Context/locationPreference";
+import jsonQueryContext from "../Context/jsonQuery";
 import ErrorBoundary from "./ErrorBoundary";
-import NotFound from "./NotFound";
+import NotFound from "../Webpages/NotFound";
 
 const LocationList = (props) => {
     const navigate = useNavigate();

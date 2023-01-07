@@ -1,5 +1,5 @@
-import LocationList from "./LocationList";
-import useFetch from "./UseFetch";
+import LocationList from "../Components/LocationList";
+import useFetch from "../Components/UseFetch";
 
 const Locations = () => {
     const campus = 'University of Waterloo'
