@@ -2,7 +2,6 @@ import flask
 from flask import *
 from flask_cors import CORS, cross_origin
 import json
-import onefunctionalgorithm
 import location_config
 import algorithm
 
