@@ -3,8 +3,8 @@ import { DirectionsRenderer, GoogleMap} from "@react-google-maps/api";
 import jsonQueryContext from "./Context/jsonQuery";
 import sendData from "./ApiRequests/sendData";
 import StudySpotContext from "./Context/IdealStudySpot.js";
-//import NotFound from "./NotFound";
 import calculateRoute from "./ApiRequests/fetchRoute";
+import ErrorBoundary from "./ErrorBoundary";
 
 const Results = () => {
     const [JsonQuery] = useContext(jsonQueryContext);
@@ -93,4 +93,10 @@ const Results = () => {
     )
 }
 
-export default Results;
+export default function ResultsErrorBoundary(props){
+    return (
+        <ErrorBoundary>
+            <Results {...props} />
+        </ErrorBoundary>
+    );
+};

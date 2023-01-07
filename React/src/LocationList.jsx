@@ -2,6 +2,8 @@ import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import LocationPreferenceContext from "./Context/locationPreference";
 import jsonQueryContext from "./Context/jsonQuery";
+import ErrorBoundary from "./ErrorBoundary";
+import NotFound from "./NotFound";
 
 const LocationList = (props) => {
     const navigate = useNavigate();
@@ -12,7 +14,13 @@ const LocationList = (props) => {
 
     const [stateUpdate, setStateUpdate] = useState(0);
 
-    if(rating.length < 2){
+    if(JsonQuery == null){
+        return (
+            <NotFound />
+        )
+    }
+
+    if(rating.length < 2 || JsonQuery == null){
         return (
             <div className="loading-pane">
                 <h3>Loading...</h3>
@@ -88,4 +96,10 @@ const LocationList = (props) => {
     );
 };
  
-export default LocationList;
+export default function ResultsErrorBoundary(props){
+    return (
+        <ErrorBoundary>
+            <LocationList {...props} />
+        </ErrorBoundary>
+    );
+};
