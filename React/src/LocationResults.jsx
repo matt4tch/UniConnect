@@ -32,7 +32,7 @@ const LocationResults = ({ GetLocationInfo }) => {
             }
         } 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [Coordinates]);
 
     return;
 }

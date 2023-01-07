@@ -4,6 +4,7 @@ from flask_cors import CORS, cross_origin
 import json
 import onefunctionalgorithm
 import location_config
+import algorithm
 
 app = Flask(__name__)
 CORS(app)
@@ -40,9 +41,9 @@ def request_page1():
     friend_lng = request_data['friendLng']
     preferences = request_data['preferences']
 
-    data = ({'status': 200, 'ok': True, 'Results': [{'your_lat': f'{your_lat}'}, {'your_lng': f'{your_lng}'},
-                                                        {'friend_lat': f'{friend_lat}'},
-                                                        {'friend_lng': f'{friend_lng}'}]})
+    data_result = algorithm.determine_optimal_location(your_lng, friend_lng, your_lat, friend_lat, preferences)
+
+    data = ({'status': 200, 'ok': True, 'Results': data_result})
     json_dump = json.dumps(data)
 
     return json_dump

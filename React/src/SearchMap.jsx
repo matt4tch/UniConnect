@@ -20,7 +20,6 @@ const Map = () => {
     }), []);
 
     const [latLong] = useContext(LatLongContext);
-
     return (
         <GoogleMap
             center={center}
@@ -33,7 +32,7 @@ const Map = () => {
               }} //Setting the size of the Map
             > 
             {
-                LatLongContext ? (
+                latLong ? (
                     <Marker position={latLong}/>
                 ) : <Marker position={center}/>
             }

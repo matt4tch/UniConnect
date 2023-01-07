@@ -33,8 +33,7 @@ function initMap() {
        origin: origin,
        destination: destination,
        waypoints: [],
-       travelMode: google.maps.TravelMode.WALKING,
-       //avoidTolls: true,
+       travelMode: google.maps.TravelMode.WALKING
      })
      .then((result) => {
        display.setDirections(result);

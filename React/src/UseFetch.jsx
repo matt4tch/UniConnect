@@ -13,8 +13,7 @@ const useFetch = () => {
     const [error, setError] = useState(null);
 
     const results = fetchLocationDetails();
-
-    console.log(results);
+    
     useEffect(() => {
         results.then(function(parsedData){
             const length = parsedData['locations'].length;

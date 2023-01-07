@@ -79,7 +79,7 @@ const LocationList = (props) => {
                             preferences: rating
                         }
                         setJsonQuery(jsonObject),
-                        navigate("/Results")
+                        navigate("/results")
                     }
                 }}>
                 Submit

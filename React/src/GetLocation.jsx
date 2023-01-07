@@ -10,6 +10,7 @@ const GetLocation = () => {
 
     const results = useQuery(["search", requestParams], fetchGeoLocation);
     const locationDetails = results?.data ?? [];
+    const [inputValue, setInputValue] = useState("");
 
     const [submitState, setSubmitState] = useState(false);
     const details = {
@@ -32,10 +33,12 @@ const GetLocation = () => {
                     e.preventDefault();
                     const formData = new FormData(e.target);
                     const location = formData.get("location");
+                    console.log(location);
                     setSubmitState(true);
+                    setInputValue(location);
                     setRequestParams(location);
                 }}>
-                <input id="location" name="location" placeholder="Location" />
+                <input onChange={e => setInputValue(e.target.value)}id="location" name="location" placeholder="Location" value={inputValue}/>
                 <button>Submit</button>
             </form>
             <LocationResults GetLocationInfo={details}/>

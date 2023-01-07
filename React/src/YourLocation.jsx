@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import GetLocation from "./GetLocation";
 import SearchMap from "./SearchMap";
@@ -7,10 +7,16 @@ import jsonQueryContext from "./Context/jsonQuery";
 
 const YourLocation = () =>{
     const navigate = useNavigate();
-    const [LatLong] = useContext(LatLongContext);
+    const [LatLong, setLatLong] = useContext(LatLongContext);
     // eslint-disable-next-line no-unused-vars
     const [_, setJsonQuery] = useContext(jsonQueryContext);
     let yourLocation = {};
+
+    useEffect(() => {
+        setLatLong(null);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
 
     return (
         <div className="your-location">

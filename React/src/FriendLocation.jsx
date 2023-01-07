@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import GetLocation from "./GetLocation";
 import SearchMap from "./SearchMap";
@@ -9,9 +9,14 @@ import NotFound from "./NotFound";
 const FriendLocation = () => {
 
     const navigate = useNavigate();
-    const [LatLong] = useContext(LatLongContext);
+    const [LatLong, setLatLong] = useContext(LatLongContext);
     const [JsonQuery, setJsonQuery] = useContext(jsonQueryContext);
     let jsonObject = {};
+
+    useEffect(() => {
+        setLatLong(null);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     if(JsonQuery==null){
         return (

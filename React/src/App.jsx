@@ -42,7 +42,7 @@ const App = () => {
                                 <Route path="/your-location" element={<YourLocation />} />
                                 <Route path="/friend-location" element={<FriendLocation />} />
                                 <Route path="/location-preferences" element={<Locations />}/>
-                                <Route path="/Results" element={<Results />} />
+                                <Route path="/results" element={<Results />} />
                                 <Route path="*" element={<NotFound />} />
                             </Routes>
                     </QueryClientProvider>

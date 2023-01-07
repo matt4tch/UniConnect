@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a929d9d4-f651-4d63-b198-8c184e594eb9" name="Changes" comment="" />
+    <list default="true" id="a929d9d4-f651-4d63-b198-8c184e594eb9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/React/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/React/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/React/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/React/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/React/src/FriendLocation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/React/src/FriendLocation.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/React/src/GetLocation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/React/src/GetLocation.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/React/src/LocationList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/React/src/LocationList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/React/src/Results.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/React/src/Results.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/React/src/SearchMap.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/React/src/SearchMap.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/React/src/UseFetch.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/React/src/UseFetch.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/React/src/YourLocation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/React/src/YourLocation.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
