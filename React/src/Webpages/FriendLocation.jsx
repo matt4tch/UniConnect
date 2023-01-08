@@ -38,7 +38,7 @@ const FriendLocation = () => {
                         <SearchMap />
                     </div>
                 </div>
-                <button className="submit"
+                <button className="text-white bg-yellow-500 border-0 rounded-xl p-3 cursor-pointer hover:shadow-lg"
                     onClick={(e) => {
                         e.preventDefault();
                         {

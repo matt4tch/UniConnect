@@ -29,7 +29,7 @@ const App = () => {
     const studySpot = useState(null);
     const locationPreference = useState(null);
     return (
-        <div className="App">
+        <div className="underline text-yellow-500 bg-white">
             <BrowserRouter>
             <Topbar />
                 <LatLongContext.Provider value={latLong}>

@@ -39,7 +39,7 @@ const GetLocation = () => {
                     setRequestParams(location);
                 }}>
                 <input onChange={e => setInputValue(e.target.value)}id="location" name="location" placeholder="Location" value={inputValue}/>
-                <button>Submit</button>
+                <button className="text-white bg-yellow-500 border-0 rounded-xl p-3 cursor-pointer hover:shadow-lg">Submit</button>
             </form>
             <LocationResults GetLocationInfo={details}/>
         </div>

@@ -32,14 +32,14 @@ const LocationList = (props) => {
         <div className="location-list">
             <h1>{props.title}</h1>
             {locs.map((loc) => (
-                <div className="location" key={loc.id}>
-                    <div className="text">
+                <div className="p-9 flex items-center m-0" key={loc.id}>
+                    <div className="m-8 flex-1">
                         <h1>{ loc.title }</h1>
                         <p>{ loc.body }</p>  
                         <h2>Current rating: { rating[loc.id - 1] }</h2>
-                        <div className="preference-rating">
+                        <div className="mt-5">
                             <form>
-                                <div className="location-input">
+                                <div className="mr-5">
                                     <select 
                                         value={ rating[loc.id - 1] } 
                                         onChange={(e) => {
@@ -62,8 +62,7 @@ const LocationList = (props) => {
                                         <option value="10">10</option>
                                     </select>
                                 </div>
-                                <button 
-                                    className="location-update"
+                                <button className="text-white bg-yellow-500 border-0 rounded-xl p-3 cursor-pointer hover:shadow-lg"
                                     onClick={(e) => {
                                         e.preventDefault();
                                         console.log(e.target.value);
