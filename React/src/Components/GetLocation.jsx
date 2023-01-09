@@ -33,10 +33,14 @@ const GetLocation = () => {
                     e.preventDefault();
                     const formData = new FormData(e.target);
                     const location = formData.get("location");
-                    console.log(location);
-                    setSubmitState(true);
-                    setInputValue(location);
-                    setRequestParams(location);
+
+                    if(location == ""){
+                        alert('Location not found, please try again!');
+                    } else {
+                        setSubmitState(true);
+                        setInputValue(location);
+                        setRequestParams(location);
+                    }
                 }}>
                 <input onChange={e => setInputValue(e.target.value)}id="location" name="location" placeholder="Location" value={inputValue}/>
                 <button className="text-white bg-yellow-500 border-0 rounded-xl p-3 cursor-pointer hover:shadow-lg">Submit</button>
