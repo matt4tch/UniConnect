@@ -11,7 +11,9 @@ const LocationList = (props) => {
     const locs = props['locs']['locations'];
     const [rating, setRating] = useContext(LocationPreferenceContext);
     const [JsonQuery, setJsonQuery] = useContext(jsonQueryContext);
-
+    const locationImages = ['images/v1.jpeg', 'images/mc.jpeg', 'images/dp.jpeg', 
+    'images/hagey_hall.jpeg', 'images/dc.jpeg', 'images/cmh.jpeg', 'images/e7.jpeg',
+    'images/mkv.jpeg', 'images/slc.jpeg']
     const [stateUpdate, setStateUpdate] = useState(0);
 
     if(JsonQuery == null){
@@ -33,13 +35,13 @@ const LocationList = (props) => {
             <h1>{props.title}</h1>
             {locs.map((loc) => (
                 <div className="p-9 flex items-center m-0" key={loc.id}>
-                    <div className="m-8 flex-1">
-                        <h1>{ loc.title }</h1>
+                    <div className="m-8 text-xl flex-3">
+                        <h1 className="text-3xl mb-10">{ loc.title }</h1>
                         <p>{ loc.body }</p>  
                         <h2>Current rating: { rating[loc.id - 1] }</h2>
                         <div className="mt-5">
                             <form>
-                                <div className="mr-5">
+                                <div className="mr-5 mt-10">
                                     <select 
                                         value={ rating[loc.id - 1] } 
                                         onChange={(e) => {
@@ -70,6 +72,9 @@ const LocationList = (props) => {
                                 </button>
                             </form>
                         </div>
+                    </div>
+                    <div className="flex-1 min-w-min">
+                        <img className="m-8 rounded-3xl border-2 border-black" src={ locationImages[loc.id-1] } alt=""/>
                     </div>
                 </div>
                 ))}

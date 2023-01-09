@@ -30,7 +30,7 @@ const App = () => {
     const studySpot = useState(null);
     const locationPreference = useState(null);
     return (
-        <div className="underline text-yellow-500 bg-amber-200">
+        <div className="text-black font-sans bg-gray-300">
             <BrowserRouter>
             <Topbar />
                 <LatLongContext.Provider value={latLong}>
@@ -51,8 +51,8 @@ const App = () => {
                 </StudySpotContext.Provider>
                 </jsonQueryContext.Provider>
                 </LatLongContext.Provider>
-            <Footer />
             </BrowserRouter>
+            <Footer />
         </div>
     )
 }
