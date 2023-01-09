@@ -13,6 +13,7 @@ import Topbar from "./Webpages/Topbar";
 import Locations from "./Webpages/Locations";
 import HomePage from "./Webpages/HomePage";
 import NotFound from "./Webpages/NotFound";
+import Footer from "./Webpages/Footer";
 
 const queryClient = new QueryClient({
     defaultOptions: {
@@ -29,7 +30,7 @@ const App = () => {
     const studySpot = useState(null);
     const locationPreference = useState(null);
     return (
-        <div className="underline text-yellow-500 bg-white">
+        <div className="underline text-yellow-500 bg-amber-200">
             <BrowserRouter>
             <Topbar />
                 <LatLongContext.Provider value={latLong}>
@@ -50,6 +51,7 @@ const App = () => {
                 </StudySpotContext.Provider>
                 </jsonQueryContext.Provider>
                 </LatLongContext.Provider>
+            <Footer />
             </BrowserRouter>
         </div>
     )
