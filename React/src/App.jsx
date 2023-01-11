@@ -30,7 +30,7 @@ const App = () => {
     const studySpot = useState(null);
     const locationPreference = useState(null);
     return (
-        <div className="text-black font-sans bg-gray-300">
+        <div className="text-black font-sans bg-gradient-to-t from-[#F0E9E5]  to-[#EEEAE8]">
             <BrowserRouter>
             <Topbar />
                 <LatLongContext.Provider value={latLong}>
