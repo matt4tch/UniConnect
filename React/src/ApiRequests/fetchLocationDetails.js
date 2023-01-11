@@ -1,6 +1,6 @@
 async function fetchLocationDetails(){
     const message = "key";
-    const res = await fetch(`https://6e51-99-228-112-134.ngrok.io/location_info/`,{
+    const res = await fetch(`https://798b-129-97-124-19.ngrok.io/location_info/`,{
         method: "POST",
         headers: { "Content-Type": "application/json"},
         body: JSON.stringify(message)
