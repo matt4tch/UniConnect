@@ -3,21 +3,16 @@ import { Link, } from "react-router-dom";
 const HomePage = () =>{
 
     return (
-        <div className="margin-auto p-50 place-content-center m-10 h-screen font-serif">
-            <div className="flex">
-            <h1 className="font-medium text-8xl mb-5 mr-10 w-1/2 text-black">Let Us Handle How You Connect In Uni!</h1>
-            <img className="w-1/2 mr-6 rounded-3xl" src="/images/cmh.jpeg"/>
-            </div>
-            <div className="w-1/2 text-2xl mt-10">
-            <p>Step 1: Select your location!</p>
-            <p>Step 2: Select your friend&apos;s location with our interactive map!</p>
-            <p>Step 3: Select your preferences regarding each study spot option!</p>
-            <p>Step 4: Let the magic algorithm do it&apos;s work!</p>
-            <p>Step 5: Take the directions given and find your common study spot!</p>
-            <p className="mb-7">Step 6: Send your friend&apos;s directions to your friend so they can find you there!</p>
+        <div className="margin-auto p-50 place-content-center m-10">
+            <div className="grid">
+            <h1 className="font-serif font-medium text-8xl m-20 w-3/4 text-[#25312b] place-self-center text-center tracking-wide">Let Us Handle How You Connect In Uni!</h1>
+            <img src="images/cmh.jpeg" className="place-self-center w-3/5 rounded-3xl border-[#34453D] border-2"/>      
+            
+            <p className="text-2xl mt-10 text-center">Welcome to UniConnect! After being fed up with losing time searching for 
+            study spots on campus which would be close for both parties, our group of 5 developped this project over the winter break to assist students like
+            us to find where to study on campus!</p>
             </div>
             
-            <Link className="text-white bg-yellow-500 border-0 rounded-xl p-3 mt-20 cursor-pointer hover:shadow-lg" to="/your-location">Use Tool</Link>
         </div>
    
 
