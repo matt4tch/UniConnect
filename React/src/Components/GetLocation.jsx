@@ -42,8 +42,8 @@ const GetLocation = () => {
                         setRequestParams(location);
                     }
                 }}>
-                <input onChange={e => setInputValue(e.target.value)}id="location" name="location" placeholder="Location" value={inputValue}/>
-                <button className="text-white bg-yellow-500 border-0 rounded-xl p-3 cursor-pointer hover:shadow-lg">Submit</button>
+                <input className="bg-[#7f8d87] p-2 placeholder:text-white rounded-xl mr-5 hover:border-4" onChange={e => setInputValue(e.target.value)}id="location" name="location" placeholder="Location" value={inputValue}/>
+                <button className="text-white border-[#34453D] border-2 bg-[#3c4d45] rounded-xl p-3 cursor-pointer hover:shadow-lg">Place Marker</button>
             </form>
             <LocationResults GetLocationInfo={details}/>
         </div>
