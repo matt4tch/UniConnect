@@ -36,13 +36,14 @@ const LocationList = (props) => {
             {locs.map((loc) => (
                 <div className="p-9 flex items-center m-0" key={loc.id}>
                     <div className="m-8 text-xl flex-3">
-                        <h1 className="text-3xl mb-10">{ loc.title }</h1>
+                        <h1 className="text-3xl mb-10 font-serif font-medium text-[#25312b]">{ loc.title }</h1>
                         <p>{ loc.body }</p>  
                         <h2>Current rating: { rating[loc.id - 1] }</h2>
                         <div className="mt-5">
                             <form>
                                 <div className="mr-5 mt-10">
                                     <select 
+                                        className="rounded-xl bg-[#FCFFFC] border-[#34453D] border-2 mb-6 hover:border-double hover:border-4 font-serif"
                                         value={ rating[loc.id - 1] } 
                                         onChange={(e) => {
                                             console.log(e.target.value);
@@ -64,7 +65,7 @@ const LocationList = (props) => {
                                         <option value="10">10</option>
                                     </select>
                                 </div>
-                                <button className="text-white bg-yellow-500 border-0 rounded-xl p-3 cursor-pointer hover:shadow-lg"
+                                <button className="rounded-xl bg-[#e1e7e1] border-[#34453D] border-2 hover:border-dashed hover:border-4 font-serif p-3 cursor-pointer hover:shadow-lg"
                                     onClick={(e) => {
                                         e.preventDefault();
                                         console.log(e.target.value);
@@ -73,13 +74,14 @@ const LocationList = (props) => {
                             </form>
                         </div>
                     </div>
-                    <div className="flex-1 min-w-min">
-                        <img className="m-8 rounded-3xl border-2 border-black" src={ locationImages[loc.id-1] } alt=""/>
+                    <div className="flex-1">
+                        <img className="m-8 rounded-3xl border-4 border-[#25312b] w-[270vh]" src={ locationImages[loc.id-1] } alt=""/>
                     </div>
                 </div>
                 ))}
             <button 
-                className="final-submit"
+                className="final-submit rounded-xl bg-[#9aab9a] border-[#34453D] border-2 hover:border-dashed hover:border-4 
+                font-serif p-3 cursor-pointer hover:shadow-lg m-16 w-[300px]"
                 onClick={(e) => {
                     e.preventDefault();
                     {

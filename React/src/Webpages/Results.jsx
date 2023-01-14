@@ -52,23 +52,25 @@ const Results = () => {
     if (StudySpotResults == null || StudySpotResults.ok == null || !StudySpotResults.ok || FriendResult == null) {
         return (
           <div className="loading-pane">
-            <h2 className="loader">Loading...</h2>
+            <h2 className="loader text-4xl text-[#25312b] font-serif flex justify-center mb-8">LOADING...</h2>
           </div>
         );
     }
     return (
         <div className="Results">
-            <h3>The optimal study spot is: {StudySpotResults['Results']['Study_Location']}</h3>
-            <p>It will take you around { StudySpotResults['Results']['User_1_Time']} minutes to get there.</p>
-            <p>It will take your friend around { StudySpotResults['Results']['User_2_Time']} minutes to get there.</p>
-            <GoogleMap
+            <h3 className="text-2xl text-black font-serif flex justify-center m-2 mt-10 uppercase tracking-[10px]">Your optimal study spot is</h3>
+            <h1 className="text-4xl text-[#25312b] font-serif flex justify-center mb-8">{StudySpotResults['Results']['Study_Location']}</h1>
+            <p className="flex justify-center">It will take you around { StudySpotResults['Results']['User_1_Time']} minutes to get there.</p>
+            <p className="flex justify-center">It will take your friend around { StudySpotResults['Results']['User_2_Time']} minutes to get there.</p>
+            <div className="flex justify-center"><GoogleMap
                 center={center}
                 zoom={15} 
                 mapContainerClassName="panel"
                 mapContainerStyle={{
+                    
                     margin: "20px 0 0",
                     height: "60vh",
-                    width: "100%"
+                    width: "80%"
                 }} //Setting the size of the Map
                 > 
                 {friendDirection != null &&
@@ -80,13 +82,13 @@ const Results = () => {
                     </div>
                 }
                 
-            </GoogleMap>
+            </GoogleMap> </div>
             <div className="your-directions">
-                <h3>Your directions:</h3>
-                <div id="your-panel"></div>
+                <h3 className="flex justify-center text-3xl font-serif m-4 text-[#25312b] uppercase">Your directions</h3>
+                <div  id="your-panel"></div>
             </div>
             <div className="friend-directions">
-                <h3>Directions for your friend:</h3>
+                <h3 className="flex justify-center text-3xl font-serif m-4 text-[#25312b] uppercase">Friend Directions</h3>
                 <div id="friend-panel"></div>
             </div>
         </div>

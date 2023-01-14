@@ -1,6 +1,6 @@
 async function sendData(dataToSend){
     const message = dataToSend;
-    const res = await fetch(`https://798b-129-97-124-19.ngrok.io/location/`, {
+    const res = await fetch(`https://PersonalProject.richardsha1.repl.co/location/`, {
         method: "POST",
         headers: { "Content-Type": "application/json"},
         body: JSON.stringify(message)
