@@ -115,5 +115,18 @@ def determine_optimal_location(lng1, lng2, lat1, lat2, string_prefs):
         minutes2 = optimal_duration2 // 60
         seconds2 = optimal_duration2 % 60
 
-    return {'Study_Location': f'{names[optimal_value_index]}',
-            'User_1_Time': f'{minutes1}:{seconds1}', 'User_2_Time': f'{minutes2}:{seconds2}'}
+    if seconds1 < 10 and seconds2 < 10:
+        return {'Study_Location': f'{names[optimal_value_index]}',
+            'User_1_Time': f'{minutes1}:0{seconds1}', 'User_2_Time': f'{minutes2}:0{seconds2}'}
+    elif seconds1 < 10:
+        return {'Study_Location': f'{names[optimal_value_index]}',
+                'User_1_Time': f'{minutes1}:0{seconds1}', 'User_2_Time': f'{minutes2}:{seconds2}'}
+    elif seconds2 < 10:
+        return {'Study_Location': f'{names[optimal_value_index]}',
+                'User_1_Time': f'{minutes1}:{seconds1}', 'User_2_Time': f'{minutes2}:0{seconds2}'}
+
+    else:
+        return {'Study_Location': f'{names[optimal_value_index]}',
+                'User_1_Time': f'{minutes1}:{seconds1}', 'User_2_Time': f'{minutes2}:{seconds2}'}
+
+
