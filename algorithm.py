@@ -55,7 +55,7 @@ alternate_names = {'v1': names[0],
 now = datetime.now()
 
 # Retrieves a Google Maps Object
-gmaps = googlemaps.Client(key='AIzaSyDD4V7yHsGuEztB3sRbcQFfjAZYyZhBHm4')
+gmaps = googlemaps.Client(key=GOOGLE_API_KEY)
 
 
 def determine_optimal_location(lng1, lng2, lat1, lat2, string_prefs):
