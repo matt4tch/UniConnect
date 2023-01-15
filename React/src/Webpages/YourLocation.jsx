@@ -30,7 +30,7 @@ const YourLocation = () =>{
                             <li className="border-b-2 text-center font-bold">Instructions</li>
                             <li className="border-b-2">Enter your location in the search bar</li>
                             <li className="border-b-2">If your location is not found, make sure the location is in Waterloo</li>
-                            <li className="border-b-2">If your location is not in Waterloo, make sure to add 'Waterloo' or 'University of Waterloo' at the end of the input</li>
+                            <li className="border-b-2">If your location is not in Waterloo, make sure to add &apos;Waterloo&apos; or &apos;University of Waterloo&apos; at the end of the input</li>
                             <ul className="font-normal ">
                                 <li className="border-b-2 text-center font-bold">Location examples:</li>
                                 <li className="border-b-2">E7 Waterloo</li>
