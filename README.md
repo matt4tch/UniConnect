@@ -1,6 +1,9 @@
 # UniConnect
 An application that aims to connect university students to a common study area based on their tastes and preferences. To use the application, a user will input a location on the University of Waterloo campus, input the location of their friend on the University of Waterloo, and select preferences to various study locations on campus. 
 
+https://user-images.githubusercontent.com/75958818/212496115-ef3353bb-9615-4c25-9fbd-ccd540cbe2b9.mp4
+
+
 # Backend: matching algorithm 
 -	A server launched with flask and ngrok to send data from the frontend and backend of the application through JSON files.
 -	Backend algorithm: Once receiving the location of the user and their friend from the frontend, the Google Maps API is called to calculate the distances between the user and their friend to various spots on campus.
@@ -66,8 +69,6 @@ Sets up public server (for RESTful API calls between frontend and backend)
 ## Launching the frontend
 - In the command line for the frontend (Such as in vscode), run `npm run dev` and click the link to launcht application for development and testing purposes.
 - For production purposes, run `npm run build` to get a /dist folder that can be used to deploy a website to a domain. 
-
-https://user-images.githubusercontent.com/75958818/212496115-ef3353bb-9615-4c25-9fbd-ccd540cbe2b9.mp4
 
 *Note: This application is not affiliated with the University of Waterloo in any way. 
 
