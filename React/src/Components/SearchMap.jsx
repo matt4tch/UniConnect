@@ -4,7 +4,7 @@ import LatLongContext from '../Context/latLong';
 
 const SearchMap = () => {
     const { isLoaded } = useLoadScript({
-        googleMapsApiKey: "AIzaSyDD4V7yHsGuEztB3sRbcQFfjAZYyZhBHm4"
+        googleMapsApiKey: "GOOGLE_API_KEY"
        });
     
     if (!isLoaded){
